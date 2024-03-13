@@ -5,26 +5,37 @@ import { TableList } from './TableList'
 
 export const Table = () => {
     const [repos, setRepos] = useState(null)
+    const [loading, setLoading] = useState(false)
+    const [error, setError] = useState(false)
+
     const [selectedPage, setSelectedPage] = useState(0)
 
     useEffect(() => {
         const fetchData = async () => {
+            setError(false)
+            setLoading(true)
             try {
                 const response = await fetch('https://api.github.com/search/repositories?q=language:javascript&sort=stars&order=desc&per_page=100')
                 const data = await response.json()
 
+                setLoading(false)
                 setRepos(data)
             } catch (error) {
-                console.log(error)
+                setLoading(false)
+                setError(true)
             }
         }
 
         fetchData()
     }, [])
 
-    if (!repos) {
+    if (error) {
+        return <h1>En feil har oppstått</h1>
+    }
+
+    if (loading || !repos) {
         return (
-            <h1>fething</h1>
+            <h1>Henter data</h1>
         )
     }
 
