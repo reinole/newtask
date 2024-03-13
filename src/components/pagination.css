@@ -1,0 +1,10 @@
+.buttonWrapper {
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+}
+
+.pagination-button {
+    padding: 16px;
+    margin-top: 8px;
+}

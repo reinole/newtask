@@ -1,0 +1,13 @@
+table {
+    display: block;
+    height: 80vh;
+    overflow-y: scroll;
+}
+
+th {
+    border-bottom: 2px solid black;
+}
+
+tr:nth-child(2n) {
+    background-color: lightblue;
+}

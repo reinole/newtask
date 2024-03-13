@@ -1,7 +1,9 @@
-import '../App.css'
 import { useEffect, useState } from "react"
+
 import { Pagination } from './Pagination'
 import { TableList } from './TableList'
+
+import './table.css'
 
 export const Table = () => {
     const [repos, setRepos] = useState(null)
@@ -54,14 +56,15 @@ export const Table = () => {
 
     return (
         <>
-            <table>
+            <table cellSpacing="0">
+                <tr>
+                    <th>Name</th>
+                    <th>Description</th>
+                    <th>Url</th>
+                    <th>Stars</th>
+                </tr>
                 <tbody>
-                    <tr>
-                        <th>Name</th>
-                        <th>Description</th>
-                        <th>Url</th>
-                        <th>Stars</th>
-                    </tr>
+
                     <TableList chunkyArray={chunkyArray} selectedPage={selectedPage} />
                 </tbody>
             </table>

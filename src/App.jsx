@@ -4,7 +4,7 @@ import './App.css'
 function App() {
   return (
     <>
-      <h1>Repo list</h1>
+      <h1>100 mest populære JavaScript repositories</h1>
       <Table />
     </>
   )

@@ -1,3 +1,4 @@
+import "./pagination.css"
 
 export const Pagination = ({ selectedPage, setSelectedPage, arrayLength }) => {
 
@@ -15,12 +16,12 @@ export const Pagination = ({ selectedPage, setSelectedPage, arrayLength }) => {
 
     return (
         <>
-            <div>
-                {selectedPage > 0 && <button onClick={() => setSelectedPage(selectedPage - 1)}>{"<"}</button>}
+            <div className="buttonWrapper">
+                <button className="pagination-button" disabled={selectedPage === 0} onClick={() => setSelectedPage(selectedPage - 1)}>{"<"}</button>
                 {pageNumber.map(item => (
-                    <button key={item} onClick={() => setSelectedPage(item)}>{item + 1}</button>
+                    <button className="pagination-button" disabled={selectedPage === item} key={item} onClick={() => setSelectedPage(item)}>{item + 1}</button>
                 ))}
-                {selectedPage < arrayLength - 1 && <button onClick={() => setSelectedPage(selectedPage + 1)}>{">"}</button>}
+                <button className="pagination-button" disabled={selectedPage === arrayLength - 1} onClick={() => setSelectedPage(selectedPage + 1)}>{">"}</button>
             </div>
         </>
     )
