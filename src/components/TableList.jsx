@@ -1,9 +1,9 @@
 import './table.css'
 
-export const TableList = ({ chunkyArray, selectedPage }) => {
+export const TableList = ({ paginatedData, selectedPage }) => {
     return (
         <>
-            {chunkyArray[selectedPage].map(item => (
+            {paginatedData[selectedPage].map(item => (
                 <tr height="40px" key={item.id}>
                     <td>{item.name}</td>
                     <td>{item.description}</td>

@@ -42,33 +42,32 @@ export const Table = () => {
     }
 
     const createPaginationData = ({ items }) => {
-        const listSize = 20;
-        const newArray = [];
-        for (let i = 0; i < items.length; i += listSize) {
-            const list = items.slice(i, i + listSize)
-            newArray.push(list)
+        const listPerPage = 20;
+        const slicedArray = [];
+        for (let i = 0; i < items.length; i += listPerPage) {
+            const list = items.slice(i, i + listPerPage)
+            slicedArray.push(list)
         }
 
-        return newArray
+        return slicedArray
     }
 
-    const chunkyArray = createPaginationData(repos)
+    const paginatedData = createPaginationData(repos)
 
     return (
         <>
             <table cellSpacing="0">
                 <tr>
-                    <th>Name</th>
-                    <th>Description</th>
+                    <th>Navn</th>
+                    <th>Beskrivelse</th>
                     <th>Url</th>
-                    <th>Stars</th>
+                    <th>Stjerner</th>
                 </tr>
                 <tbody>
-
-                    <TableList chunkyArray={chunkyArray} selectedPage={selectedPage} />
+                    <TableList paginatedData={paginatedData} selectedPage={selectedPage} />
                 </tbody>
             </table>
-            <Pagination setSelectedPage={setSelectedPage} selectedPage={selectedPage} arrayLength={chunkyArray.length} />
+            <Pagination paginatedDataLength={paginatedData.length} setSelectedPage={setSelectedPage} selectedPage={selectedPage} />
         </>
     )
 }
