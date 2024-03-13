@@ -15,12 +15,11 @@ export const Pagination = () => {
             }
         }
 
-        // fetchData()
+        fetchData()
     }, [])
 
 
     const createPaginationData = ({ items }) => {
-        console.log("it", items)
         const listSize = 20;
         const newArray = [];
         for (let i = 0; i < items.length; i += listSize) {
@@ -32,19 +31,25 @@ export const Pagination = () => {
     }
 
     if (!repos) {
-        return <p>fething</p>
+        return (
+            <tr>
+                <td>fething</td>
+            </tr>
+        )
     }
-
-    console.log("rep", repos)
 
     const chunkyArray = createPaginationData(repos)
 
-    console.log(chunkyArray)
-
-
     return (
-        <div>
-            aløksjd
-        </div>
+        <>
+            {chunkyArray[0].map(item => (
+                <tr key={item.id}>
+                    <td>{item.name}</td>
+                    <td>{item.id}</td>
+                    <td>{item.name}</td>
+                    <td>{item.name}</td>
+                </tr>
+            ))}
+        </>
     )
 }
