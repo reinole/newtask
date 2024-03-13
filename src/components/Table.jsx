@@ -60,7 +60,7 @@ export const Table = () => {
                         <th>Name</th>
                         <th>Description</th>
                         <th>Url</th>
-                        <th>Language</th>
+                        <th>Stars</th>
                     </tr>
                     <TableList chunkyArray={chunkyArray} selectedPage={selectedPage} />
                 </tbody>
