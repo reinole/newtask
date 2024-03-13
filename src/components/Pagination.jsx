@@ -1,13 +1,10 @@
 
-export const Pagination = ({ setSelectedPage }) => {
+export const Pagination = ({ selectedPage, setSelectedPage, arrayLength }) => {
     return (
         <>
             <div>
-                <button onClick={() => setSelectedPage(0)}>1</button>
-                <button onClick={() => setSelectedPage(1)}>2</button>
-                <button onClick={() => setSelectedPage(2)}>3</button>
-                <button onClick={() => setSelectedPage(3)}>4</button>
-                <button onClick={() => setSelectedPage(4)}>5</button>
+                {selectedPage > 0 && <button onClick={() => setSelectedPage(selectedPage - 1)}>{"<"}</button>}
+                {selectedPage < arrayLength - 1 && <button onClick={() => setSelectedPage(selectedPage + 1)}>{">"}</button>}
             </div>
         </>
     )

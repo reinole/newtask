@@ -4,7 +4,6 @@ import { Pagination } from './Pagination'
 import { TableList } from './TableList'
 
 export const Table = () => {
-
     const [repos, setRepos] = useState(null)
     const [selectedPage, setSelectedPage] = useState(0)
 
@@ -40,8 +39,6 @@ export const Table = () => {
         return newArray
     }
 
-
-
     const chunkyArray = createPaginationData(repos)
 
     return (
@@ -57,7 +54,7 @@ export const Table = () => {
                     <TableList chunkyArray={chunkyArray} selectedPage={selectedPage} />
                 </tbody>
             </table>
-            <Pagination setSelectedPage={setSelectedPage} />
+            <Pagination setSelectedPage={setSelectedPage} selectedPage={selectedPage} arrayLength={chunkyArray.length} />
         </>
     )
 }
