@@ -6,16 +6,18 @@ table {
     border: 1px solid lightblue;
 }
 
+td,
+th {
+    text-align: start;
+    vertical-align: baseline;
+    padding: 8px;
+}
+
 th {
     position: sticky;
     background-color: lightblue;
     border-bottom: 2px solid black;
-    padding: 8px;
     top: 0;
-}
-
-td {
-    padding: 8px;
 }
 
 tr:nth-child(2n) {
