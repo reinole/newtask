@@ -15,7 +15,7 @@ export const Pagination = ({ paginatedDataLength, selectedPage, setSelectedPage 
 
     return (
         <>
-            <div className="buttonWrapper">
+            <div className="button-wrapper">
                 <button className="pagination-button" disabled={selectedPage === 0} onClick={() => setSelectedPage(selectedPage - 1)}>{"<"}</button>
                 {pageNumber.map(item => (
                     <button className="pagination-button" disabled={selectedPage === item} key={item} onClick={() => setSelectedPage(item)}>{item + 1}</button>

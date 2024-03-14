@@ -1,13 +1,26 @@
 table {
+    border-radius: 10px;
     display: block;
     height: 80vh;
     overflow-y: scroll;
+    border: 1px solid lightblue;
 }
 
 th {
+    position: sticky;
+    background-color: lightblue;
     border-bottom: 2px solid black;
+    padding: 8px;
+    top: 0;
+}
+
+td {
+    padding: 8px;
 }
 
 tr:nth-child(2n) {
-    background-color: lightblue;
+    background-color: #f3f3f3;
+    border-top: 1px solid darkgray;
+    border-bottom: 1px solid gray;
+
 }

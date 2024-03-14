@@ -60,7 +60,7 @@ export const Table = () => {
                 <tr>
                     <th>Navn</th>
                     <th>Beskrivelse</th>
-                    <th>Url</th>
+                    <th>GitHub url</th>
                     <th>Stjerner</th>
                 </tr>
                 <tbody>
