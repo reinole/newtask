@@ -1,4 +1,4 @@
-import './table.css'
+import '../table.css'
 
 export const TableList = ({ paginatedData, selectedPage }) => {
     return (

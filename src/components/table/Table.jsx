@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
 
-import { Pagination } from './Pagination'
-import { TableList } from './TableList'
+import { Pagination } from '../pagination/Pagination'
+import { TableList } from './tableList/TableList'
 
 import './table.css'
 
