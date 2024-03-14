@@ -57,13 +57,13 @@ export const Table = () => {
     return (
         <>
             <table cellSpacing="0">
-                <tr>
-                    <th>Navn</th>
-                    <th>Beskrivelse</th>
-                    <th>GitHub url</th>
-                    <th>Stjerner</th>
-                </tr>
                 <tbody>
+                    <tr>
+                        <th>Navn</th>
+                        <th>Beskrivelse</th>
+                        <th>GitHub url</th>
+                        <th>Stjerner</th>
+                    </tr>
                     <TableList paginatedData={paginatedData} selectedPage={selectedPage} />
                 </tbody>
             </table>
